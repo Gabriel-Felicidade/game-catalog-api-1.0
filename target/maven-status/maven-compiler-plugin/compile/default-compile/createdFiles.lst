@@ -1,0 +1,11 @@
+org\acme\Desenvolvedora.class
+org\acme\FichaTecnica.class
+org\acme\SearchGeneroResponse.class
+org\acme\SearchDesenvolvedoraResponse.class
+org\acme\Jogo.class
+org\acme\ClassificacaoIndicativa.class
+org\acme\SearchJogoResponse.class
+org\acme\Genero.class
+org\acme\GeneroResource.class
+org\acme\DesenvolvedoraResource.class
+org\acme\JogoResource.class
