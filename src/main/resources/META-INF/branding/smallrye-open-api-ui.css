@@ -1,120 +1,75 @@
-/* ===== Tema Escuro Robusto (V.6 - Destaque de Botões) ===== */
 
-/* Estilos Gerais do Corpo e Fundo */
-body {
-    background-color: #1a1a1a !important;
-    color: #f8f9fa;
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-}
-
-/* Fundo das Seções (Tags e Modelos) */
-.swagger-ui .opblock-tag-section,
-.swagger-ui .model-box {
-    background-color: #242424 !important;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-}
-
-/* Cabeçalho Superior */
 .topbar {
-    background-color: #212121 !important;
-    border-bottom: 2px solid #6c757d;
+    background: linear-gradient(90deg, #0D0F18 0%, #1A1C2A 100%) !important; /* Fundo mais escuro para o topbar */
+    border-bottom: 2px solid #00BFFF;
+    min-height: 80px; /* Aumenta a altura para acomodar o logo */
+    display: flex; /* Para alinhar o conteúdo */
+    align-items: center; /* Alinha verticalmente */
+    padding: 10px 20px;
 }
 
-/* Tags de Operação (Título do Endpoint) */
-.opblock-tag {
-    background-color: #282828 !important;
-    border-left: 5px solid #007bff;
-    color: #f8f9fa !important;
+/* Esconde o logo SVG padrão do Swagger UI (se existir) */
+.swagger-ui .topbar img {
+    display: none;
 }
 
-/* --- Cores dos Métodos HTTP --- */
-.opblock.opblock-get .opblock-summary-method { background-color: #28a745; }
-.opblock.opblock-post .opblock-summary-method { background-color: #ffc107; }
-.opblock.opblock-put .opblock-summary-method { background-color: #fd7e14; }
-.opblock.opblock-delete .opblock-summary-method { background-color: #dc3545; }
-
-/* Define a cor de todos os textos */
-.swagger-ui *, .swagger-ui .parameter__name, .swagger-ui .opblock-body, .swagger-ui .opblock-summary-path, .swagger-ui .response-col_description {
-    color: #f8f9fa !important;
+/* Esconde o nome do aplicativo padrão (ex: 'Swagger UI') */
+.swagger-ui .topbar .link {
+    visibility: hidden; /* Esconde o texto, mas mantém o espaço */
+    position: relative;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 
-/* --- Estilos de Botões de Ação (Destaque Apenas para Ações) --- */
+/* Container do logo personalizado */
+.swagger-ui .topbar .wrapper a.topbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha à esquerda */
+    height: 100%;
+}
 
-/* Padrão para Botões (Neutro) */
-.swagger-ui .btn {
-    background-color: #444444 !important;
-    color: #f8f9fa !important;
+
+.swagger-ui .topbar .wrapper a.topbar-brand::before {
+    content: '';
+    display: block;
+    width: 250px; /* Ajuste conforme o tamanho do seu logo */
+    height: 60px; /* Ajuste conforme o tamanho do seu logo */
+    background-image: url('data:image/svg+xml;base64,PAg...SEU_SVG_LOGO_AQUI...=='); /* Cole o base64 do seu SVG aqui */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-right: 20px;
+}
+
+
+/* Estiliza o seletor de ambiente/versão ao lado do logo */
+.swagger-ui .topbar .download-url-wrapper .select-label select {
+    background: rgba(13, 15, 24, 0.8) !important;
+    color: #E0E0E0 !important;
+    border: 1px solid #00BFFF !important;
+    padding: 5px 10px;
     border-radius: 4px;
+    margin-left: auto; /* Empurra para a direita */
+}
+
+/* Ajustes para o botão "Explore" se ele aparecer */
+.swagger-ui .topbar .download-url-wrapper .button {
+    background-color: #00BFFF !important;
+    color: #0D0F18 !important;
     border: none !important;
-}
-
-/* Destaque 1: Botão "Try it out" */
-.opblock-tag .try-out__btn {
-    background-color: #007bff !important; /* Azul Primário */
-    color: #fff !important;
-}
-
-/* Destaque 2: Botão "Execute" */
-.execute-wrapper .btn.execute {
-    background-color: #28a745 !important; /* Verde de Sucesso */
-    color: #fff !important;
-}
-
-/* Destaque 3: Botão "Clear" */
-.opblock-tag .clear-btn {
-    background-color: #dc3545 !important; /* Vermelho de Perigo */
-    color: #fff !important;
-}
-
-/* Destaque 4: Botões "Cancel" e "Reset" */
-.swagger-ui .btn.cancel,
-.swagger-ui .btn.reset {
-    background-color: #6c757d !important; /* Cinza/Neutro Secundário */
-    color: #fff !important;
-}
-
-
-/* --- Estilos de Input e Editor de Código (Layout Corrigido) --- */
-
-/* Inputs de Texto Simples */
-input[type="text"], textarea, select, .swagger-ui .try-out input[type="text"],
-.swagger-ui .parameters-col_description input[type="text"] {
-    background-color: #333333 !important;
-    color: #f8f9fa !important;
-    border: 1px solid #555555 !important;
-    padding: 8px !important;
     border-radius: 4px;
-    opacity: 1;
+    padding: 5px 15px;
+    margin-left: 10px;
+}
+.swagger-ui .topbar .download-url-wrapper .button:hover {
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
 }
 
-/* Editores de Código (Request Body, Example Value, Schema) */
-.swagger-ui .editor-content, .swagger-ui .CodeMirror, .swagger-ui .CodeMirror-scroll,
-.swagger-ui .cm-editor, .swagger-ui .json-schema-container {
-    background-color: #1e1e1e !important;
-    color: #f8f9fa !important;
-    border: none !important;
-    line-height: 1.5 !important;
-    min-height: 20px !important;
+/* Garante que o container do URL de exploração fique à direita */
+.swagger-ui .topbar .download-url-wrapper {
+    margin-left: auto; /* Isso empurrará o bloco para a direita */
+    display: flex;
+    align-items: center;
 }
-
-/* Garante que o texto de sintaxe seja branco */
-.swagger-ui .hljs, .swagger-ui .hljs-attr, .swagger-ui .hljs-string, .swagger-ui .CodeMirror-line span {
-    color: #f8f9fa !important;
-}
-
-/* Layout para evitar corte de texto */
-.swagger-ui .CodeMirror-scroll {
-    overflow: auto !important; max-height: 400px !important;
-}
-
-/* SOLUÇÃO FINAL PARA O CORTE: Altera o elemento de linha interna */
-.swagger-ui .CodeMirror .CodeMirror-line {
-    line-height: 1.5 !important;
-    min-height: 20px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-input[type="text"]:focus, textarea:focus, .swagger-ui
