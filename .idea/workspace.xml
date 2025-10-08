@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0131e112-c220-4ed7-807b-9f5c8db9f24b" name="Changes" comment="feat: Padroniza API REST e corrige problemas de usabilidade do Swagger UI">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/build-metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/build-metrics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/quarkus/bootstrap/test-app-model.dat" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus/bootstrap/test-app-model.dat" afterDir="false" />
+    <list default="true" id="0131e112-c220-4ed7-807b-9f5c8db9f24b" name="Changes" comment="commit config CORS">
+      <change beforePath="$PROJECT_DIR$/../Game-Api-Catalog-front" beforeDir="false" afterPath="$PROJECT_DIR$/../Game-Api-Catalog-front" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +25,10 @@
         <option value="LaysC &lt;laiscarvalho858@gmail.com&gt;" />
       </list>
     </option>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_COMMON_BRANCH" value="main" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -214,14 +213,28 @@
       <workItem from="1759362356927" duration="304000" />
       <workItem from="1759363662476" duration="3202000" />
       <workItem from="1759878876396" duration="55000" />
-      <workItem from="1759878938933" duration="3005000" />
+      <workItem from="1759878938933" duration="3418000" />
     </task>
+    <task id="LOCAL-00001" summary="commit config CORS">
+      <option name="closed" value="true" />
+      <created>1759884434882</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759884434882</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="b0e45017-10d9-40fc-875d-fd351831f421" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -263,7 +276,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -278,12 +291,32 @@
             </State>
           </value>
         </entry>
+        <entry key="b0e45017-10d9-40fc-875d-fd351831f421">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: Padroniza API REST e corrige problemas de usabilidade do Swagger UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Padroniza API REST e corrige problemas de usabilidade do Swagger UI" />
+    <MESSAGE value="segundo commit&#10;&#10;Signed-off-by: mandeumemailparagabriel@gmail.com &lt;mandeumemailparagabriel@gmail.com&gt;" />
+    <MESSAGE value="commit config CORS" />
+    <MESSAGE value="commit config CORS&#10;&#10;Signed-off-by: mandeumemailparagabriel@gmail.com &lt;mandeumemailparagabriel@gmail.com&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit config CORS&#10;&#10;Signed-off-by: mandeumemailparagabriel@gmail.com &lt;mandeumemailparagabriel@gmail.com&gt;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
