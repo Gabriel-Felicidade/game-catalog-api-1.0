@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0131e112-c220-4ed7-807b-9f5c8db9f24b" name="Changes" comment="commit config CORS">
       <change beforePath="$PROJECT_DIR$/../Game-Api-Catalog-front" beforeDir="false" afterPath="$PROJECT_DIR$/../Game-Api-Catalog-front" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +214,7 @@
       <workItem from="1759362356927" duration="304000" />
       <workItem from="1759363662476" duration="3202000" />
       <workItem from="1759878876396" duration="55000" />
-      <workItem from="1759878938933" duration="3418000" />
+      <workItem from="1759878938933" duration="4034000" />
     </task>
     <task id="LOCAL-00001" summary="commit config CORS">
       <option name="closed" value="true" />
