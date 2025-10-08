@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo de Jogos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #f4f4f4;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .game-title {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+    .game-info {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Catálogo de Jogos</h1>
+  <div id="content">
+    Carregando jogos...
+  </div>
+
+  <script>
+    const apiUrl = 'https://game-catalog-api.onrender.com';
+
+    async function fetchGames() {
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error('Erro ao buscar dados da API: ' + response.status);
+        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error('Erro na requisição:', error);
+        throw error;
+      }
+    }
+
+    function renderGames(games) {
+      const container = document.getElementById('content');
+      if (!Array.isArray(games) || games.length === 0) {
+        container.innerHTML = '<p>Nenhum jogo encontrado.</p>';
+        return;
+      }
+
+      const ul = document.createElement('ul');
+      games.forEach(game => {
+        const li = document.createElement('li');
+        // Adaptar conforme os campos que a sua API retorna:
+        const title = game.title || game.name || 'Título não informado';
+        const genre = game.genre || game.category || 'Gênero não informado';
+        const year = game.year || game.releaseYear || '';
+
+        li.innerHTML = `
+          <div class="game-title">${title}</div>
+          <div class="game-info">
+            ${genre}${year ? ' — ' + year : ''}
+          </div>
+        `;
+        ul.appendChild(li);
+      });
+      container.innerHTML = '';
+      container.appendChild(ul);
+    }
+
+    async function main() {
+      const contentDiv = document.getElementById('content');
+      try {
+        const games = await fetchGames();
+        renderGames(games);
+      } catch (error) {
+        contentDiv.innerHTML = '<p>Erro ao carregar os jogos.</p>';
+      }
+    }
+
+    // Executa quando a página carrega:
+    window.addEventListener('DOMContentLoaded', main);
+  </script>
+</body>
+</html>
