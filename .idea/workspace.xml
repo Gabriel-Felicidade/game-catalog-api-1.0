@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0131e112-c220-4ed7-807b-9f5c8db9f24b" name="Changes" comment="commit config CORS&#10;&#10;Signed-off-by: mandeumemailparagabriel@gmail.com &lt;mandeumemailparagabriel@gmail.com&gt;">
+      <change afterPath="$PROJECT_DIR$" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Game-Api-Catalog-front" beforeDir="false" afterPath="$PROJECT_DIR$/../Game-Api-Catalog-front" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/build-metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/build-metrics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/game-catalog-api-dev.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/quarkus/bootstrap/dev-app-model.dat" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +101,7 @@
       <recent name="C:\Users\Gabriel\IdeaProjects\Game-Api-Catalog\src\main\resources\META-INF\branding" />
     </key>
   </component>
-  <component name="RunManager" selected="Quarkus.game-catalog-api">
+  <component name="RunManager" selected="Quarkus Dev Mode.game-catalog-api">
     <configuration name="Music-API-Quarkus" type="QuarkusRunConfiguration" factoryName="QuarkusRunConfiguration">
       <module name="Game-Api-Catalog" />
       <method v="2" />
@@ -185,8 +187,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Quarkus.game-catalog-api" />
-      <item itemvalue="Quarkus.game-catalog" />
       <item itemvalue="Quarkus (Maven).Unnamed" />
       <item itemvalue="Quarkus Dev Mode.game-catalog-api" />
       <item itemvalue="Quarkus Dev Mode.Music-API-Quarkus" />
@@ -217,7 +217,9 @@
       <workItem from="1759363662476" duration="3202000" />
       <workItem from="1759878876396" duration="55000" />
       <workItem from="1759878938933" duration="5911000" />
-      <workItem from="1760138697897" duration="4273000" />
+      <workItem from="1760138697897" duration="5379000" />
+      <workItem from="1761000091723" duration="38000" />
+      <workItem from="1761000273139" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="commit config CORS">
       <option name="closed" value="true" />
