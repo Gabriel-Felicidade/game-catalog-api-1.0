@@ -43,9 +43,19 @@
       <change afterPath="$PROJECT_DIR$/../ADO3/gradlew" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ADO3/gradlew.bat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ADO3/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/GlobalExceptionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/IdempotencyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/KeyManagementResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/RateLimiter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/security/ApiKeyFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Game-Api-Catalog-front" beforeDir="false" afterPath="$PROJECT_DIR$/../Game-Api-Catalog-front" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/Desenvolvedora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/Desenvolvedora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/DesenvolvedoraResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/DesenvolvedoraResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/GeneroResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/GeneroResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/JogoResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/JogoResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +66,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -98,52 +109,71 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Quarkus (Maven).Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Quarkus Dev Mode.game-catalog-api.executor&quot;: &quot;Run&quot;,
-    &quot;Quarkus.game-catalog-api.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gabriel/OneDrive - SENAC - SP/Documentos/projetos/Game-Api-Catalog/src/main/resources/META-INF/branding&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Quarkus (Maven).Unnamed.executor": "Run",
+    "Quarkus Dev Mode.game-catalog-api.executor": "Run",
+    "Quarkus.game-catalog-api.executor": "Run",
+    "Remote JVM Debug.game-catalog-api (Remote).executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Gabriel/OneDrive - SENAC - SP/Documentos/projetos/Game-Api-Catalog/src/main/resources/META-INF/branding",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.acme" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Gabriel\OneDrive - SENAC - SP\Documentos\projetos\Game-Api-Catalog\src\main\resources\META-INF\branding" />
       <recent name="C:\Users\Gabriel\IdeaProjects\Game-Api-Catalog\src\main\resources\META-INF\branding" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gabriel\OneDrive - SENAC - SP\Documentos\projetos\Game-Api-Catalog\src\main\java\org\acme" />
       <recent name="C:\Users\Gabriel\IdeaProjects\Game-Api-Catalog\src\main\resources\META-INF\branding" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="configurationStatuses">
+      <map>
+        <entry key="QuarkusRunConfiguration">
+          <value>
+            <map>
+              <entry key="game-catalog-api" value="FAILED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="RunManager" selected="Quarkus Dev Mode.game-catalog-api">
     <configuration name="Music-API-Quarkus" type="QuarkusRunConfiguration" factoryName="QuarkusRunConfiguration">
-      <module name="Game-Api-Catalog" />
+      <option name="profile" />
       <method v="2" />
     </configuration>
     <configuration name="game-catalog-api" type="QuarkusRunConfiguration" factoryName="QuarkusRunConfiguration">
       <module name="game-catalog-api" />
+      <option name="profile" />
       <method v="2" />
     </configuration>
     <configuration name="game-catalog-api" type="QuarkusRunConfigurationType" factoryName="Quarkus" nameIsGenerated="true">

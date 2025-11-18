@@ -10,7 +10,7 @@ import java.util.List;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 @Entity
-public class Desenvolvedora extends PanacheEntityBase {
+class zDesenvolvedora extends PanacheEntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(readOnly = true)
@@ -35,9 +35,9 @@ public class Desenvolvedora extends PanacheEntityBase {
     @JsonIgnore
     public List<Jogo> jogos = new ArrayList<>();
 
-    public Desenvolvedora() {}
+    public void Desenvolvedora() {}
 
-    public Desenvolvedora(Long id, String nome, LocalDate dataDeFundacao, String paisDeOrigem, FichaTecnica fichaTecnica) {
+    public void Desenvolvedora(Long id, String nome, LocalDate dataDeFundacao, String paisDeOrigem, FichaTecnica fichaTecnica) {
         this.id = id;
         this.nome = nome;
         this.dataDeFundacao = dataDeFundacao;

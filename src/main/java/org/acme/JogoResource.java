@@ -12,6 +12,7 @@ import java.net.URI;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import jakarta.inject.Inject; // NOVO
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
@@ -20,19 +21,18 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 
 
-@Path("/jogos")
+@Path("/v1/jogos") // ALTERADO para V1
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class JogoResource {
 
-// Adicione este método dentro da classe org.acme.JogoResource
-
-// Adicione este método dentro da classe org.acme.JogoResource
+    @Inject // NOVO: Injeta o serviço de idempotência
+    IdempotencyService idempotencyService;
 
     @GET
     @Path("/search")
     @Operation(
-            summary = "Busca jogos com paginação e ordenação",
+            summary = "Busca jogos com paginação e ordenação (V1)",
             description = "Retorna uma lista de jogos filtrada conforme a pesquisa, com suporte para paginação."
     )
     @APIResponse(
@@ -102,7 +102,7 @@ public class JogoResource {
         response.hasMore = effectivePage < (query.pageCount() - 1);
 
         if (response.hasMore) {
-            String nextPageUrl = String.format("http://localhost:8080/jogos/search?q=%s&page=%d&size=%d&sort=%s&direction=%s",
+            String nextPageUrl = String.format("http://localhost:8080/v1/jogos/search?q=%s&page=%d&size=%d&sort=%s&direction=%s",
                     (q != null ? q : ""), (effectivePage + 1), size, sort, direction);
             response.nextPage = nextPageUrl;
         } else {
@@ -113,7 +113,7 @@ public class JogoResource {
     }
 
     @GET
-    @Operation(summary = "Retorna todos os jogos")
+    @Operation(summary = "Retorna todos os jogos (V1)")
     @APIResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = Jogo.class, type = SchemaType.ARRAY)))
     public Response getAll() {
         return Response.ok(Jogo.listAll()).build();
@@ -121,7 +121,7 @@ public class JogoResource {
 
     @GET
     @Path("{id}")
-    @Operation(summary = "Retorna um jogo por ID")
+    @Operation(summary = "Retorna um jogo por ID (V1)")
     @APIResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = Jogo.class)))
     @APIResponse(responseCode = "404", description = "Jogo não encontrado")
     public Response getById(@PathParam("id") long id) {
@@ -134,10 +134,36 @@ public class JogoResource {
 
     @POST
     @Transactional
-    @Operation(summary = "Adiciona um novo jogo")
+    @Operation(summary = "Adiciona um novo jogo (V1 - Idempotente)", description = "Cria um novo jogo. Utilize o cabeçalho 'Idempotency-Key' para evitar duplicações acidentais (requisito 4.1).")
     @APIResponse(responseCode = "201", description = "Jogo criado", content = @Content(schema = @Schema(implementation = Jogo.class)))
     @APIResponse(responseCode = "400", description = "Requisição inválida")
-    public Response insert(@Valid Jogo jogo) {
+    @APIResponse(responseCode = "409", description = "Conflito - Jogo com o mesmo título já existe")
+    public Response insert(@Valid Jogo jogo,
+                           @Parameter(description = "Chave única para garantir a idempotência da requisição.")
+                           @HeaderParam("Idempotency-Key") String idempotencyKey) { // NOVO
+
+        // 1. Lógica de Idempotência: Verifica se a chave já existe no cache
+        if (idempotencyKey != null && !idempotencyKey.isBlank()) {
+            Response cachedResponse = idempotencyService.getResponse(idempotencyKey);
+            if (cachedResponse != null) {
+                return cachedResponse; // Retorna a resposta armazenada
+            }
+        }
+
+        // 2. Lógica de Negócio: Validação e Persistência
+        if (Jogo.find("titulo", jogo.titulo).count() > 0) {
+            Response conflictResponse = Response.status(Response.Status.CONFLICT)
+                    .entity("{\"message\": \"Um jogo com o título '" + jogo.titulo + "' já está cadastrado.\"}")
+                    .build();
+
+            // Cacha a resposta de erro
+            if (idempotencyKey != null && !idempotencyKey.isBlank()) {
+                idempotencyService.cacheResponse(idempotencyKey, conflictResponse);
+            }
+            return conflictResponse;
+        }
+
+        // --- (Seu código original para validação de Desenvolvedora e Gêneros) ---
         if (jogo.desenvolvedora != null && jogo.desenvolvedora.id != null) {
             Desenvolvedora d = Desenvolvedora.findById(jogo.desenvolvedora.id);
             if (d == null) {
@@ -166,15 +192,21 @@ public class JogoResource {
         }
 
         Jogo.persist(jogo);
-
         URI location = UriBuilder.fromResource(JogoResource.class).path("{id}").build(jogo.id);
-        return Response.created(location).entity(jogo).build();
+        Response response = Response.created(location).entity(jogo).build();
+
+        // 3. Cache a Resposta (apenas se a operação foi bem-sucedida e a chave foi fornecida)
+        if (idempotencyKey != null && !idempotencyKey.isBlank()) {
+            idempotencyService.cacheResponse(idempotencyKey, response);
+        }
+
+        return response;
     }
 
     @PUT
     @Path("{id}")
     @Transactional
-    @Operation(summary = "Atualiza um jogo existente")
+    @Operation(summary = "Atualiza um jogo existente (V1)")
     @APIResponse(responseCode = "200", description = "Jogo atualizado", content = @Content(schema = @Schema(implementation = Jogo.class)))
     @APIResponse(responseCode = "404", description = "Jogo não encontrado")
     public Response update(@PathParam("id") long id, @Valid Jogo newJogo) {
@@ -220,7 +252,7 @@ public class JogoResource {
     @DELETE
     @Path("{id}")
     @Transactional
-    @Operation(summary = "Remove um jogo")
+    @Operation(summary = "Remove um jogo (V1)")
     @APIResponse(responseCode = "204", description = "Jogo removido")
     @APIResponse(responseCode = "404", description = "Jogo não encontrado")
     public Response delete(@PathParam("id") long id) {
@@ -233,6 +265,4 @@ public class JogoResource {
         Jogo.deleteById(id);
         return Response.noContent().build();
     }
-
 }
-
