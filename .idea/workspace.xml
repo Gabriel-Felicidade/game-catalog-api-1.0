@@ -44,6 +44,10 @@
       <change afterPath="$PROJECT_DIR$/../ADO3/gradlew.bat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ADO3/settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Game-Api-Catalog-front" beforeDir="false" afterPath="$PROJECT_DIR$/../Game-Api-Catalog-front" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/Desenvolvedora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/Desenvolvedora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/DesenvolvedoraResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/DesenvolvedoraResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/SearchDesenvolvedoraResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/SearchDesenvolvedoraResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,95 +162,14 @@
     </option>
   </component>
   <component name="RunManager" selected="Quarkus Dev Mode.game-catalog-api">
-    <configuration name="Music-API-Quarkus" type="QuarkusRunConfiguration" factoryName="QuarkusRunConfiguration">
-      <option name="profile" />
-      <method v="2" />
-    </configuration>
     <configuration name="game-catalog-api" type="QuarkusRunConfiguration" factoryName="QuarkusRunConfiguration">
       <module name="game-catalog-api" />
       <option name="profile" />
       <method v="2" />
     </configuration>
-    <configuration name="game-catalog-api" type="QuarkusRunConfigurationType" factoryName="Quarkus" nameIsGenerated="true">
-      <module name="game-catalog-api" />
-      <QsMavenRunConfiguration>
-        <MavenSettings>
-          <option name="myGeneralSettings" />
-          <option name="myRunnerSettings" />
-          <option name="myRunnerParameters">
-            <MavenRunnerParameters>
-              <option name="cmdOptions" />
-              <option name="profiles">
-                <set />
-              </option>
-              <option name="goals">
-                <list>
-                  <option value="quarkus:dev" />
-                </list>
-              </option>
-              <option name="multimoduleDir" />
-              <option name="pomFileName" value="pom.xml" />
-              <option name="profilesMap">
-                <map />
-              </option>
-              <option name="projectsCmdOptionValues">
-                <list />
-              </option>
-              <option name="resolveToWorkspace" value="false" />
-              <option name="workingDirPath" value="$PROJECT_DIR$" />
-            </MavenRunnerParameters>
-          </option>
-        </MavenSettings>
-        <targetMavenLocalRepo />
-        <emulateTerminal>false</emulateTerminal>
-        <profile>dev</profile>
-      </QsMavenRunConfiguration>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="game-catalog" type="QuarkusRunConfigurationType" factoryName="Quarkus">
-      <module name="Game-Api-Catalog" />
-      <QsMavenRunConfiguration>
-        <MavenSettings>
-          <option name="myGeneralSettings" />
-          <option name="myRunnerSettings" />
-          <option name="myRunnerParameters">
-            <MavenRunnerParameters>
-              <option name="cmdOptions" />
-              <option name="profiles">
-                <set />
-              </option>
-              <option name="goals">
-                <list>
-                  <option value="quarkus:dev" />
-                </list>
-              </option>
-              <option name="multimoduleDir" />
-              <option name="pomFileName" value="pom.xml" />
-              <option name="profilesMap">
-                <map />
-              </option>
-              <option name="projectsCmdOptionValues">
-                <list />
-              </option>
-              <option name="resolveToWorkspace" value="false" />
-              <option name="workingDirPath" value="$PROJECT_DIR$" />
-            </MavenRunnerParameters>
-          </option>
-        </MavenSettings>
-        <targetMavenLocalRepo />
-        <emulateTerminal>false</emulateTerminal>
-        <profile>dev</profile>
-      </QsMavenRunConfiguration>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Quarkus (Maven).Unnamed" />
       <item itemvalue="Quarkus Dev Mode.game-catalog-api" />
-      <item itemvalue="Quarkus Dev Mode.Music-API-Quarkus" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -379,6 +302,17 @@
     <MESSAGE value="commit config CORS" />
     <MESSAGE value="commit config CORS&#10;&#10;Signed-off-by: mandeumemailparagabriel@gmail.com &lt;mandeumemailparagabriel@gmail.com&gt;" />
     <option name="LAST_COMMIT_MESSAGE" value="commit config CORS&#10;&#10;Signed-off-by: mandeumemailparagabriel@gmail.com &lt;mandeumemailparagabriel@gmail.com&gt;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/acme/DesenvolvedoraResource.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

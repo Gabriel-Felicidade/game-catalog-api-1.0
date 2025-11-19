@@ -10,7 +10,7 @@ import java.util.List;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 @Entity
-class zDesenvolvedora extends PanacheEntityBase {
+public class Desenvolvedora extends PanacheEntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(readOnly = true)

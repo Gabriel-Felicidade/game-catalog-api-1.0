@@ -73,12 +73,12 @@ public class DesenvolvedoraResource {
         int effectivePage = Math.max(page, 0);
 
         // Cria a query de busca com Panache
-        PanacheQuery<zDesenvolvedora> query;
+        PanacheQuery<Desenvolvedora> query;
         if (q == null || q.isBlank()) {
-            query = zDesenvolvedora.findAll(sortObj);
+            query = Desenvolvedora.findAll(sortObj);
         } else {
             // Busca por nome ou país de origem (case-insensitive)
-            query = zDesenvolvedora.find(
+            query = Desenvolvedora.find(
                     "lower(nome) like ?1 or lower(paisDeOrigem) like ?1",
                     sortObj,
                     "%" + q.toLowerCase() + "%"
@@ -86,7 +86,7 @@ public class DesenvolvedoraResource {
         }
 
         // Aplica a paginação
-        List<zDesenvolvedora> desenvolvedoras = query.page(effectivePage, size).list();
+        List<Desenvolvedora> desenvolvedoras = query.page(effectivePage, size).list();
 
         // Monta o objeto de resposta
         var response = new SearchDesenvolvedoraResponse();
@@ -108,18 +108,18 @@ public class DesenvolvedoraResource {
 
     @GET
     @Operation(summary = "Retorna todas as desenvolvedoras (V1)")
-    @APIResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = zDesenvolvedora.class, type = SchemaType.ARRAY)))
+    @APIResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = Desenvolvedora.class, type = SchemaType.ARRAY)))
     public Response getAll() {
-        return Response.ok(zDesenvolvedora.listAll()).build();
+        return Response.ok(Desenvolvedora.listAll()).build();
     }
 
     @GET
     @Path("{id}")
     @Operation(summary = "Retorna uma desenvolvedora por ID (V1)")
-    @APIResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = zDesenvolvedora.class)))
+    @APIResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = Desenvolvedora.class)))
     @APIResponse(responseCode = "404", description = "Desenvolvedora não encontrada")
     public Response getById(@Parameter(description = "ID da desenvolvedora", required = true) @PathParam("id") long id) {
-        zDesenvolvedora entity = zDesenvolvedora.findById(id);
+        Desenvolvedora entity = Desenvolvedora.findById(id);
         if (entity == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
@@ -129,10 +129,10 @@ public class DesenvolvedoraResource {
     @POST
     @Transactional
     @Operation(summary = "Adiciona uma nova desenvolvedora (V1 - Idempotente)", description = "Cria uma nova desenvolvedora. Utilize o cabeçalho 'Idempotency-Key' para evitar duplicações acidentais (requisito 4.1).")
-    @APIResponse(responseCode = "201", description = "Desenvolvedora criada", content = @Content(schema = @Schema(implementation = zDesenvolvedora.class)))
+    @APIResponse(responseCode = "201", description = "Desenvolvedora criada", content = @Content(schema = @Schema(implementation = Desenvolvedora.class)))
     @APIResponse(responseCode = "400", description = "Requisição inválida")
     @APIResponse(responseCode = "409", description = "Conflito - Desenvolvedora com o mesmo nome já existe")
-    public Response insert(@Valid zDesenvolvedora desenvolvedora,
+    public Response insert(@Valid Desenvolvedora desenvolvedora,
                            @Parameter(description = "Chave única para garantir a idempotência da requisição.")
                            @HeaderParam("Idempotency-Key") String idempotencyKey) { // NOVO
 
@@ -145,7 +145,7 @@ public class DesenvolvedoraResource {
         }
 
         // 2. Lógica de Negócio: Validação e Persistência
-        if (zDesenvolvedora.find("nome", desenvolvedora.nome).count() > 0) {
+        if (Desenvolvedora.find("nome", desenvolvedora.nome).count() > 0) {
             Response conflictResponse = Response.status(Response.Status.CONFLICT)
                     .entity("{\"message\": \"Uma desenvolvedora com o nome '" + desenvolvedora.nome + "' já está cadastrada.\"}")
                     .build();
@@ -157,7 +157,7 @@ public class DesenvolvedoraResource {
             return conflictResponse;
         }
 
-        zDesenvolvedora.persist(desenvolvedora);
+        Desenvolvedora.persist(desenvolvedora);
         URI location = UriBuilder.fromResource(DesenvolvedoraResource.class).path("{id}").build(desenvolvedora.id);
         Response response = Response.created(location).entity(desenvolvedora).build();
 
@@ -173,10 +173,10 @@ public class DesenvolvedoraResource {
     @Path("{id}")
     @Transactional
     @Operation(summary = "Atualiza uma desenvolvedora existente (V1)")
-    @APIResponse(responseCode = "200", description = "Desenvolvedora atualizada", content = @Content(schema = @Schema(implementation = zDesenvolvedora.class)))
+    @APIResponse(responseCode = "200", description = "Desenvolvedora atualizada", content = @Content(schema = @Schema(implementation = Desenvolvedora.class)))
     @APIResponse(responseCode = "404", description = "Desenvolvedora não encontrada")
-    public Response update(@PathParam("id") long id, @Valid zDesenvolvedora newDesenvolvedora) {
-        zDesenvolvedora entity = zDesenvolvedora.findById(id);
+    public Response update(@PathParam("id") long id, @Valid Desenvolvedora newDesenvolvedora) {
+        Desenvolvedora entity = Desenvolvedora.findById(id);
         if (entity == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
@@ -206,7 +206,7 @@ public class DesenvolvedoraResource {
     @APIResponse(responseCode = "404", description = "Desenvolvedora não encontrada")
     @APIResponse(responseCode = "409", description = "Conflito - Desenvolvedora possui jogos vinculados")
     public Response delete(@PathParam("id") long id) {
-        zDesenvolvedora entity = zDesenvolvedora.findById(id);
+        Desenvolvedora entity = Desenvolvedora.findById(id);
         if (entity == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
@@ -216,7 +216,7 @@ public class DesenvolvedoraResource {
                     .entity("Não é possível deletar a desenvolvedora. Existem " + jogosVinculados + " jogo(s) vinculado(s).")
                     .build();
         }
-        zDesenvolvedora.deleteById(id);
+        Desenvolvedora.deleteById(id);
         return Response.noContent().build();
     }
 }
