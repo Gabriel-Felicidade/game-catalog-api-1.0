@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchDesenvolvedoraResponse {
-    public List<Desenvolvedora> desenvolvedoras = new ArrayList<>();
+    public List<zDesenvolvedora> desenvolvedoras = new ArrayList<zDesenvolvedora>();
     public long totalDesenvolvedoras;
     public int totalPages;
     public boolean hasMore;

@@ -43,19 +43,13 @@
       <change afterPath="$PROJECT_DIR$/../ADO3/gradlew" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ADO3/gradlew.bat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ADO3/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/GlobalExceptionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/IdempotencyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/KeyManagementResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/RateLimiter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/security/ApiKeyFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/v2/DesenvolvedoraResourceV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/v2/GeneroResourceV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/v2/JogoResourceV2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Game-Api-Catalog-front" beforeDir="false" afterPath="$PROJECT_DIR$/../Game-Api-Catalog-front" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/Desenvolvedora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/Desenvolvedora.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/DesenvolvedoraResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/DesenvolvedoraResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/GeneroResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/GeneroResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/JogoResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/JogoResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/SearchDesenvolvedoraResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/SearchDesenvolvedoraResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +107,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Quarkus (Maven).Unnamed.executor": "Run",
-    "Quarkus Dev Mode.game-catalog-api.executor": "Run",
+    "Quarkus Dev Mode.game-catalog-api.executor": "Debug",
     "Quarkus.game-catalog-api.executor": "Run",
     "Remote JVM Debug.game-catalog-api (Remote).executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -151,6 +145,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Gabriel\OneDrive - SENAC - SP\Documentos\projetos\Game-Api-Catalog\src\main\java\org\acme" />
       <recent name="C:\Users\Gabriel\IdeaProjects\Game-Api-Catalog\src\main\resources\META-INF\branding" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.acme" />
     </key>
   </component>
   <component name="RunDashboard">
