@@ -43,13 +43,7 @@
       <change afterPath="$PROJECT_DIR$/../ADO3/gradlew" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ADO3/gradlew.bat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ADO3/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/v2/DesenvolvedoraResourceV2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/v2/GeneroResourceV2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/v2/JogoResourceV2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Game-Api-Catalog-front" beforeDir="false" afterPath="$PROJECT_DIR$/../Game-Api-Catalog-front" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/DesenvolvedoraResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/DesenvolvedoraResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/SearchDesenvolvedoraResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/SearchDesenvolvedoraResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
